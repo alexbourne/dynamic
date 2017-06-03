@@ -28,6 +28,11 @@ public class FibonacciTest {
     }
 
     @Test
+    public void testFibDynamicUltimate() {
+        assertEquals(55,fibonacci.fibDynamicUltimate(10));
+    }
+
+    @Test
     public void showTimingForEachApproach() {
         int testValue = 32;
 
@@ -37,6 +42,9 @@ public class FibonacciTest {
 
         fibonacci = new Fibonacci();
         printTimeTaken("Dynamic  ", fibonacci::fibDynamic, testValue);
+
+        fibonacci = new Fibonacci();
+        printTimeTaken("Dynamic  ", fibonacci::fibDynamicUltimate, testValue);
     }
 
     private void printTimeTaken(String type, Function<Integer, Long> f, int value){

@@ -53,4 +53,27 @@ public class Fibonacci {
 
         return f[n];
     }
+
+    /**
+     * Calculate the fibonacci number for n using dynamic programming
+     * with constant space
+     *
+     * @param n
+     * @return fib(n)
+     */
+    public long fibDynamicUltimate(int n) {
+        if (n < 0) throw new IllegalArgumentException("Positive integers only please!");
+        if (n < 2) return n;
+
+        long back2 = 0, back1 = 1;
+        long next;
+
+        for (int i = 2; i < n; i++) {
+            next = back1 + back2;
+            back2 = back1;
+            back1 = next;
+        }
+
+        return back1 + back2;
+    }
 }
