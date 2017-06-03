@@ -5,12 +5,12 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class Fibonacci {
 
-    private Map<Long,Long> cache = new ConcurrentHashMap<>(32);
+    private final Map<Long,Long> cache = new ConcurrentHashMap<>(32);
 
     /**
      * Calculate the fibonacci number for n using recursion
      *
-     * @param n
+     * @param n calculate the n-th fibonacci number
      * @return fib(n)
      */
     public long fibRecurse(long n) {
@@ -25,7 +25,7 @@ public class Fibonacci {
      * Do not use this as it may hang! It violates the contract with
      * computing other keys - see the api docs
      *
-     * @param n
+     * @param n calculate the n-th fibonacci number
      * @return fib(n)
      */
     @Deprecated
@@ -39,7 +39,7 @@ public class Fibonacci {
     /**
      * Calculate the fibonacci number for n using dynamic programming
      *
-     * @param n
+     * @param n calculate the n-th fibonacci number
      * @return fib(n)
      */
     public long fibDynamic(int n) {
@@ -58,7 +58,7 @@ public class Fibonacci {
      * Calculate the fibonacci number for n using dynamic programming
      * with constant space
      *
-     * @param n
+     * @param n calculate the n-th fibonacci number
      * @return fib(n)
      */
     public long fibDynamicUltimate(int n) {
